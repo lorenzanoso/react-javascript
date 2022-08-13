@@ -2,16 +2,16 @@ import React from "react";
 import { useState } from "react";
 
 function SumDigits() {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
 
   let total = 0;
   const getTotal = () => {
-    input.split("").map((data) => {
+    input.split("").forEach((data) => {
       if (!isNaN(data)) {
-        total = total + parseInt(data);
+        total += parseInt(data);
       }
-      return total;
     });
+    return total;
   };
 
   return (

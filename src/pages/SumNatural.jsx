@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function SumNatural() {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
 
   const checkNumber = (number) => {
     // Check if letter or null

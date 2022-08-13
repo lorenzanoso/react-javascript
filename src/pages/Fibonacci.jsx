@@ -12,7 +12,9 @@ function Fibonacci() {
 
   const generateFibonacci = (enterNumber) => {
     // first scenario
-    if (enterNumber === 1) {
+    if (isNaN(enterNumber || !enterNumber)) {
+      return "Please enter a number";
+    } else if (enterNumber === 1) {
       return <h2>0</h2>;
     }
     //2nd scenario

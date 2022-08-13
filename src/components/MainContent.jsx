@@ -31,6 +31,42 @@ function MainContent() {
       <Link className="list-group-item list-group-item-action" to="/sum-digits">
         Sum of all Digits in a String
       </Link>
+      <Link
+        className="list-group-item list-group-item-action"
+        to="/number-range"
+      >
+        Number within a range
+      </Link>
+      <Link
+        className="list-group-item list-group-item-action"
+        to="/right-triangle"
+      >
+        Return Right Triangle
+      </Link>
+      <Link className="list-group-item list-group-item-action" to="/triangle">
+        Isoceles Triangle
+      </Link>
+      <Link
+        className="list-group-item list-group-item-action"
+        to="/number-triangle"
+      >
+        Number right triangle
+      </Link>
+      <Link
+        className="list-group-item list-group-item-action"
+        to="/largest-number"
+      >
+        Get largest number
+      </Link>
+      <Link
+        className="list-group-item list-group-item-action"
+        to="/count-vowels"
+      >
+        Count number of vowels
+      </Link>
+      <Link className="list-group-item list-group-item-action" to="/number-iso">
+        Number of Isoceles
+      </Link>
     </div>
   );
 }
