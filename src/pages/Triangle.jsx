@@ -1,23 +1,25 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Triangle() {
-  const [input, setInput] = useState(null);
+function Triangle() {
+  const [input, setInput] = useState("");
+  const returnTriangle = (number) => {
+    let arr = [];
+    let setNumber = "";
 
-  let num = [];
-  let dig = "";
-  const generateFibonacci = (enterNumber) => {
-    for (let i = 1; i <= enterNumber; i++) {
-      dig = dig.concat(" *");
-      num.push(dig);
+    for (let i = 1; i <= number; i++) {
+      setNumber += " *";
+      arr.push(setNumber);
     }
 
-    const newArr = num.slice().reverse().slice(1);
+    const newArr = arr.slice().reverse().slice(1);
 
-    const combined = [].concat(num, newArr);
+    const combined = [].concat(arr, newArr);
 
-    return combined.map((data) => (
-      <span className="text-danger d-block">{data}</span>
+    return combined.map((data, index) => (
+      <span className="d-block" key={index}>
+        {data}
+      </span>
     ));
   };
   return (
@@ -25,15 +27,18 @@ export default function Triangle() {
       <div className="row">
         <div className="col-12">
           <input
-            className="w-100 lead"
             type="text"
-            placeholder="Input"
+            placeholder="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
-        <div className="col-12">{generateFibonacci(input)}</div>
+        <div className="col-12">
+          <h1>{returnTriangle(input)}</h1>
+        </div>
       </div>
     </div>
   );
 }
+
+export default Triangle;

@@ -2,31 +2,33 @@ import React from "react";
 import { useState } from "react";
 
 function NumberTriangle() {
-  let numArr = [];
-  let num = "";
   const [input, setInput] = useState(null);
-  const generateFibonacci = (enterNumber) => {
-    for (let i = 1; i <= enterNumber; i++) {
-      num = num + " " + i;
-      numArr.push(num);
+  const returnTriangle = (number) => {
+    let arr = [];
+    let setNumber = "";
+
+    for (let i = 1; i <= number; i++) {
+      setNumber = setNumber + "" + i;
+      arr.push(setNumber);
     }
-    return numArr.map((data) => (
-      <span className="text-danger d-block">{data}</span>
-    ));
+
+    return arr.map((data) => <span className="d-block">{data}</span>);
   };
+
   return (
-    <div className="container p-5">
-      <div className="row">
+    <div class="container p-5">
+      <div class="row">
         <div className="col-12">
           <input
-            className="w-100 lead"
             type="text"
-            placeholder="Input"
+            placeholder="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
-        <div className="col-12">{generateFibonacci(input)}</div>
+        <div className="col-12">
+          <h1>{returnTriangle(input)}</h1>
+        </div>
       </div>
     </div>
   );

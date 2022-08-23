@@ -1,13 +1,26 @@
 import React from "react";
 import { useState } from "react";
+
 function LargestNumber() {
   const [firstInput, setFirstInput] = useState("");
   const [secondInput, setSecondInput] = useState("");
   const [thirdInput, setThirdInput] = useState("");
 
+  // const largestN = (first, second, third) => {
+  //   const arr = [first, second, third];
+  //   let largest = 0;
+
+  //   for (let i = 0; i < arr.length; i++) {
+  //     if (arr[i] > largest) {
+  //       largest = arr[i];
+  //     }
+  //   }
+  //   return largest;
+  // };
   const largestNumber = (first, second, third) => {
     return Math.max(first, second, third);
   };
+
   return (
     <div className="container p-5">
       <div className="row">

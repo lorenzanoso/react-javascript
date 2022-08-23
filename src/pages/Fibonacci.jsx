@@ -1,34 +1,26 @@
 import React from "react";
 import { useState } from "react";
 
-// input from user
-function Fibonacci() {
-  const [input, setInput] = useState(null);
+export default function Fibonacci() {
+  const [input, setInput] = useState("");
 
-  let first = 0;
-  let second = 1;
+  let arr = [];
 
-  const sequence = [];
+  let firstNum = 0;
+  let secondNum = 1;
 
-  const generateFibonacci = (enterNumber) => {
-    // first scenario
-    if (isNaN(enterNumber || !enterNumber)) {
-      return "Please enter a number";
-    } else if (enterNumber === 1) {
-      return <h2>0</h2>;
-    }
-    //2nd scenario
-    for (let i = 1; i <= enterNumber; i++) {
-      sequence.push(first);
-      let nextTerm = first + second;
-      first = second;
-      second = nextTerm;
+  const returnValue = (number) => {
+    for (let i = 1; i <= number; i++) {
+      arr.push(firstNum);
+      let newNumber = firstNum + secondNum;
+      firstNum = secondNum;
+      secondNum = newNumber;
     }
 
-    return sequence.map((data, index) => (
-      <h2 className="text-danger" key={index}>
+    return arr.map((data, index) => (
+      <span className="d-block" key={index}>
         {data}
-      </h2>
+      </span>
     ));
   };
 
@@ -37,21 +29,16 @@ function Fibonacci() {
       <div className="row">
         <div className="col-12">
           <input
-            className="w-100 lead"
             type="text"
-            placeholder="Input"
+            placeholder="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
         <div className="col-12">
-          <h1>Enter the number of terms: {input}</h1>
-          <h2>Fibonacci series:</h2>
-          {generateFibonacci(input)}
+          <h1>{returnValue(input)}</h1>
         </div>
       </div>
     </div>
   );
 }
-
-export default Fibonacci;

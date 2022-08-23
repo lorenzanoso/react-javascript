@@ -4,40 +4,32 @@ import { useState } from "react";
 function SumDigits() {
   const [input, setInput] = useState("");
 
+  let arr = [];
   let total = 0;
-  const getTotal = () => {
-    input.split("").forEach((data) => {
-      if (!isNaN(data)) {
-        total += parseInt(data);
+  const returnValue = () => {
+    arr = input.split("");
+
+    for (let i = 0; i <= arr.length; i++) {
+      if (!isNaN(arr[i])) {
+        total += parseInt(arr[i]);
       }
-    });
+    }
     return total;
   };
 
   return (
     <div className="container p-5">
       <div className="row">
-        <div className="col-md-5">
+        <div className="col-12">
           <input
-            className="w-100 lead"
             type="text"
-            placeholder="Input"
+            placeholder="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
-        <div className="col-md-5">
-          {/* {getTotal(input)} */}
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            type="text"
-            placeholder="Output"
-            readOnly={true}
-            value={getTotal(input)}
-          />
+        <div className="col-12">
+          <h1>{returnValue()}</h1>
         </div>
       </div>
     </div>

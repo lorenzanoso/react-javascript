@@ -3,33 +3,28 @@ import { useState } from "react";
 
 function Strings() {
   const [input, setInput] = useState("");
+  const returnString = (input) => {
+    return input
+      .split("")
+      .reverse("")
+      .join("")
+      .split(" ")
+      .reverse(" ")
+      .join(" ");
+  };
   return (
-    <div className="container p-5">
-      <div className="row">
-        <div className="col-md-5">
+    <div class="container p-5">
+      <div class="row">
+        <div className="col-12">
           <input
             type="text"
+            placeholder="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Input"
           />
         </div>
-        <div className="col-md-5">
-          <textarea
-            name="text"
-            id="text"
-            cols="30"
-            rows="10"
-            readOnly={true}
-            placeholder="Output"
-            value={input
-              .split("")
-              .reverse("")
-              .join("")
-              .split(" ")
-              .reverse("")
-              .join(" ")}
-          ></textarea>
+        <div className="col-12">
+          <h1>{returnString(input)}</h1>
         </div>
       </div>
     </div>

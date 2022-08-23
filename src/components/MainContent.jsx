@@ -4,17 +4,21 @@ import { Link } from "react-router-dom";
 function MainContent() {
   return (
     <div className="container p-5 list-group">
-      <Link className="list-group-item list-group-item-action" to="/fibonacci">
-        Fibonacci
+      <Link
+        className="list-group-item list-group-item-action"
+        to="/right-triangle"
+      >
+        Return Right Triangle
       </Link>
+
       <Link className="list-group-item list-group-item-action" to="/strings">
         Strings
       </Link>
       <Link
         className="list-group-item list-group-item-action"
-        to="/prime-numbers"
+        to="/number-triangle"
       >
-        Prime Numbers
+        Number right triangle
       </Link>
       <Link
         className="list-group-item list-group-item-action"
@@ -22,6 +26,7 @@ function MainContent() {
       >
         Multiplication Table
       </Link>
+
       <Link
         className="list-group-item list-group-item-action"
         to="/sum-natural"
@@ -31,26 +36,25 @@ function MainContent() {
       <Link className="list-group-item list-group-item-action" to="/sum-digits">
         Sum of all Digits in a String
       </Link>
+
       <Link
         className="list-group-item list-group-item-action"
         to="/number-range"
       >
         Number within a range
       </Link>
-      <Link
-        className="list-group-item list-group-item-action"
-        to="/right-triangle"
-      >
-        Return Right Triangle
+      <Link className="list-group-item list-group-item-action" to="/fibonacci">
+        Fibonacci
       </Link>
+
       <Link className="list-group-item list-group-item-action" to="/triangle">
         Isoceles Triangle
       </Link>
       <Link
         className="list-group-item list-group-item-action"
-        to="/number-triangle"
+        to="/prime-numbers"
       >
-        Number right triangle
+        Prime Numbers
       </Link>
       <Link
         className="list-group-item list-group-item-action"
@@ -66,6 +70,12 @@ function MainContent() {
       </Link>
       <Link className="list-group-item list-group-item-action" to="/number-iso">
         Number of Isoceles
+      </Link>
+      <Link
+        className="list-group-item list-group-item-action"
+        to="/random-name"
+      >
+        Random Name Generator
       </Link>
     </div>
   );

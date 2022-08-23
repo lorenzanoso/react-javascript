@@ -15,6 +15,7 @@ import NumberTriangle from './pages/NumberTriangle';
 import LargestNumber from './pages/LargestNumber';
 import CountVowels from './pages/CountVowels';
 import NumberIscoceles from './pages/NumberIscoceles';
+import RandomName from './pages/RandomName';
 
 function App(){
   return (
@@ -35,6 +36,7 @@ function App(){
           <Route path='/largest-number' element={<LargestNumber />} />
           <Route path='/count-vowels' element={<CountVowels />} />
           <Route path='/number-iso' element={<NumberIscoceles />} />
+          <Route path='/random-name' element={<RandomName />} />
         </Routes>
     </BrowserRouter>
   );

@@ -30,4 +30,5 @@ function CountVowels() {
     </div>
   );
 }
+
 export default CountVowels;

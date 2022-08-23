@@ -2,32 +2,37 @@ import React from "react";
 import { useState } from "react";
 
 function RightTriangle() {
-  const [input, setInput] = useState(null);
+  const [input, setInput] = useState("");
+  const returnTriangle = (number) => {
+    let arr = [];
+    let setNumber = "";
 
-  let num = [];
-  let dig = "";
-  const generateFibonacci = (enterNumber) => {
-    for (let i = 1; i <= enterNumber; i++) {
-      dig = dig.concat(" *");
-      num.push(dig);
+    for (let i = 1; i <= number; i++) {
+      setNumber += " *";
+      arr.push(setNumber);
     }
-    return num.map((data) => (
-      <span className="text-danger d-block">{data}</span>
+
+    return arr.map((data, index) => (
+      <span className="d-block" key={index}>
+        {data}
+      </span>
     ));
   };
+
   return (
     <div className="container p-5">
       <div className="row">
         <div className="col-12">
           <input
-            className="w-100 lead"
             type="text"
-            placeholder="Input"
+            placeholder="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
-        <div className="col-12">{generateFibonacci(input)}</div>
+        <div className="col-12">
+          <h1>{returnTriangle(input)}</h1>
+        </div>
       </div>
     </div>
   );

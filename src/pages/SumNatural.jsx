@@ -4,45 +4,32 @@ import { useState } from "react";
 function SumNatural() {
   const [input, setInput] = useState("");
 
-  const checkNumber = (number) => {
-    // Check if letter or null
-    if (isNaN(number) || !number) {
-      return "Please enter a number";
+  let total = 0;
+  const returnNaturalNumber = (number) => {
+    for (let i = 1; i <= number; i++) {
+      total = total + i;
     }
 
-    let sum = 0;
-    for (let i = 1; i <= number; i++) {
-      sum = sum + i;
-    }
-    return sum;
+    return total;
   };
 
   return (
     <div className="container p-5">
       <div className="row">
-        <div className="col-md-5">
+        <div className="col-12">
           <input
-            className="w-100 lead"
             type="text"
-            placeholder="Input"
+            placeholder="input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
         </div>
-        <div className="col-md-5">
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            type="text"
-            placeholder="Output"
-            readOnly={true}
-            value={checkNumber(input)}
-          />
+        <div className="col-12">
+          <h1>{returnNaturalNumber(input)}</h1>
         </div>
       </div>
     </div>
   );
 }
+
 export default SumNatural;
